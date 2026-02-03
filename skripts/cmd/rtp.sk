@@ -1,0 +1,32 @@
+command /rtp:
+    description: Teleports you to a random location
+    usage: /rtp
+    cooldown: 8 seconds
+    trigger:
+        if player's world is "world":
+            set {_loc} to generateTeleportLocation()
+            if {_loc} is set:
+                teleport player to {_loc}
+                send "&aYou have been randomly teleported!" to player
+            else:
+                send "&cCould not find a safe teleport location, try again!" to player
+        else:
+            send "&cYou cannot teleport in this dimension" to player
+
+function generateTeleportLocation() :: location:
+    loop 100 times:
+        set {_x} to random integer between -10000 and 10000
+        set {_z} to random integer between -10000 and 10000
+        set {_y} to y-coord of highest solid block at location({_x}, 0, {_z}, world "world")
+        set {_loc} to location({_x}+0.5, {_y}-1, {_z}+0.5, world "world")
+        
+        set {_block} to block at {_loc}
+        if type of {_block} is not water:
+            if type of {_block} is not lava:
+                if type of {_block} is not air:
+                    if type of block 1 meter above {_block} is air:
+                        if type of block 2 meters above {_block} is air:
+                            return block 1 meter above {_loc}
+
+    # if no safe location found, return the world's spawn
+    return spawn location of world "world"

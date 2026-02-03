@@ -1,0 +1,4 @@
+command /skr:
+    permission: op
+    trigger:
+        make sender execute "sk reload scripts"
