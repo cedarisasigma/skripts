@@ -1,5 +1,12 @@
 on join:
+    delete {auth.%player%}
+    
     set join message to "&7[&a+&7] &f%player% joined the game!"
+    wait 1 tick
+
+    send "&cPlease enter your authentication key to continue:" to player
 
 on leave:
+    delete {auth.%player%}
+
     set leave message to "&7[&c-&7] &f%player% left the game."

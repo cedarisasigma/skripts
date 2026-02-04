@@ -1,0 +1,9 @@
+on chat:
+    if message = "charlie kirkie":
+        cancel event
+        send "&aSuccessfully authenticated!" to player
+        set {auth.%player%} to true
+
+    else if {auth.%player%} = false:
+        set chat format to "&7[&cLogged Out&7] &f%player% &e» &f%message%"
+        send "&aInvalid authentication key." to player
