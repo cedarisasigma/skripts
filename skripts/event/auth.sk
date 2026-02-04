@@ -14,3 +14,18 @@ on click:
     {auth.%player%} = false
     cancel event
     send "&cYou need to be authenticated to perform this action." to player 
+
+on attack:
+    if (check [{auth.%attacker%} is true]) or (check [{auth.%attacker%} is true])
+    cancel event
+    send "&cYou need to be authenticated to perform this action." to player 
+
+on inventory click:
+    {auth.%player%} = false
+    cancel event
+    send "&cYou need to be authenticated to perform this action." to player 
+
+on inventory click:
+    {auth.%player%} = false
+    cancel event
+    send "&cYou need to be authenticated to perform this action." to player 
