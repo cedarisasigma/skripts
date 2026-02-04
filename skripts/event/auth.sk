@@ -18,7 +18,7 @@ on click:
 on damage:
     if (check [{auth.%attacker%} is true]) or (check [{auth.%attacker%} is true])
     cancel event
-    send "&cYou need to be authenticated to perform this action." to player 
+    send "&cYou need to be authenticated to perform this action." to attacker
 
 on inventory click:
     {auth.%player%} = false
