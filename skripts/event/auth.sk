@@ -6,8 +6,11 @@ on chat:
 
     else if {auth.%player%} = false:
         set chat format to "&7[&cLogged Out&7] &f%player% &e» &f%message%"
-        send "&aInvalid authentication key." to player
+
+        wait 1 tick
+        send "&cInvalid authentication key." to player
 
 on click:
     {auth.%player%} = false
+    cancel event
     send "&cYou need to be authenticated to perform this action." to player 
