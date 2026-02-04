@@ -1,0 +1,5 @@
+on join:
+    set join message to "&7[&a+&7] &f%player% joined the game!"
+
+on leave:
+    set leave message to "&7[&c-&7] &f%player% left the game."
