@@ -1,6 +1,6 @@
 on join:
-    delete {auth.%player%}
-    
+    set {auth.%player%} to false
+
     set join message to "&7[&a+&7] &f%player% joined the game!"
     wait 1 tick
 

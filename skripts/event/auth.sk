@@ -9,5 +9,5 @@ on chat:
         send "&aInvalid authentication key." to player
 
 on click:
-    !{auth.%player%}
+    {auth.%player%} = false
     send "&cYou need to be authenticated to perform this action." to player 
