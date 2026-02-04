@@ -15,7 +15,7 @@ on click:
     cancel event
     send "&cYou need to be authenticated to perform this action." to player 
 
-on attack:
+on damage:
     if (check [{auth.%attacker%} is true]) or (check [{auth.%attacker%} is true])
     cancel event
     send "&cYou need to be authenticated to perform this action." to player 
