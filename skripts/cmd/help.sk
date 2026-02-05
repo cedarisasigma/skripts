@@ -1,29 +1,21 @@
-command /help [<number>]:
+command /help:
     trigger:
         if {rank.%player%} = "member":
-            set {_help_messages::*} to "&e • &6/delwarp &e» &fDelete a warp", "&e • &6/help &e» &fShows this help menu", "&e • &6/home &e» &fTeleport to your home", "&e • &6/msg &e» &fMessage another player", "&e • &6/ranks &e» &fView server ranks", "&e • &6/rtp &e» &fTeleport to a random location", "&e • &6/seed &e» &fShow the world seed", "&e • &6/sethome &e» &fSet your home to your current position", "&e • &6/setwarp &e» &fSet a warp", "&e • &6/shop &e» &fOpens the server shop", "&e • &6/spawn &e» &fTeleports you to spawn", "&e • &6/tpa &e» &fRequest to teleport to another player", "&e • &6/tpaccept &e» &fAccept a teleport request", "&e • &6/tpdeny &e» &fDeny a teleport request", "&e • &6/trash &e» &fOpens a trash can", "&e • &6/warp &e» &fTeleport to a warp"
-            set {_page_size} to 8
-            set {_total_pages} to ceil(size of {_help_messages::*} / {_page_size})
-
-            if arg-1 is not set:
-                set {_page} to 1
-            else if arg-1 is an integer:
-                set {_page} to arg-1
-            else:
-                send "&cInvalid page number. Please use a number." to player
-                stop
-
-            if {_page} < 1:
-                set {_page} to 1
-            else if {_page} > {_total_pages}:
-                set {_page} to {_total_pages}
-
-            set {_start_index} to (({_page} - 1) * {_page_size}) + 1
-            set {_end_index} to min({_start_index} + {_page_size} - 1, size of {_help_messages::*})
-
             send "&8&m                                                                            " to player
-            loop integers from {_start_index} to {_end_index}:
-                send {_help_messages::%loop-value%} to player
-            send "&8&m                                                                            " to player
-            if {_total_pages} > 1:
-                send "&7Page &a%{_page}%&7/&a%{_total_pages}%&7. Type &6/help %({_page} + 1)% &7for next page or &6/help %({_page} - 1)% &7for previous." to player
+            send "  &e • &6/delwarp &e» &fDelete a warp" to player
+            send "  &e • &6/help &e» &fShows this help menu" to player
+            send "  &e • &6/home &e» &fTeleport to your home" to player
+            send "  &e • &6/msg &e» &fMessage another player" to player
+            send "  &e • &6/ranks &e» &fView server ranks" to player
+            send "  &e • &6/rtp &e» &fTeleport to a random location" to player
+            send "  &e • &6/seed &e» &fShow the world seed" to player
+            send "  &e • &6/sethome &e» &fSet your home to your current position" to player
+            send "  &e • &6/setwarp &e» &fSet a warp" to player
+            send "  &e • &6/shop &e» &fOpens the server shop" to player
+            send "  &e • &6/spawn &e» &fTeleports you to spawn" to player
+            send "  &e • &6/tpa &e» &fRequest to teleport to another player" to player
+            send "  &e • &6/tpaccept &e» &fAccept a teleport request" to player
+            send "  &e • &6/tpdeny &e» &fDeny a teleport request" to player
+            send "  &e • &6/trash &e» &fOpens a trash can" to player
+            send "  &e • &6/warp &e» &fTeleport to a warp" to player
+            send "&8&m                                                                              " to player
