@@ -4,6 +4,12 @@ on chat:
         send "&aSuccessfully authenticated!" to player
         set {auth.%player%} to true
 
+        if {savedpos.%player%} is set:
+            teleport player to {savedpos.%player%}
+        else:
+            wait 20 seconds
+            send "&aType /rtp to teleport to a random location!" to player
+
     else if {auth.%player%} = false:
         set chat format to "&7[&cLogged Out&7] &f%player% &e» &f%message%"
 
