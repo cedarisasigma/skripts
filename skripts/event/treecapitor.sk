@@ -15,3 +15,7 @@ on break of any log:
                         stop loop
                 
                 delete {tree.capitating.%player%}
+
+every minute:
+	loop all players:
+		delete {tree.capitating.%loop-player%}
