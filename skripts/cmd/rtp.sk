@@ -1,7 +1,7 @@
 command /rtp:
     trigger:
         if {cooldown_rtp.%player%} is set:
-            now is greater than {cooldown_rtp.%player%}
+            now is less than {cooldown_rtp.%player%}
             set {_cooldown} to difference between {cooldown_rtp.%player%} and now
             send "&cThis command is currently on cooldown for %{_cooldown}%." to player
             stop
