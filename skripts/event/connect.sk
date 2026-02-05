@@ -1,3 +1,12 @@
+on first join:
+    set {cooldown_rtp.%player%} to now
+    set join message to "&7[&a+&7] &f%player% joined the game! &d#%all players%"
+    
+    wait 1 tick
+    send "&aWelcome to the TuffSMP!" to player 
+    
+
+
 on join:
     if distance between player and location(0.5, 64, 0.5, world "world") is greater than 20:
         set {savedpos.%player%} to location of player
@@ -6,8 +15,6 @@ on join:
 
     set {auth.%player%} to false
     
-    set {cooldown_rtp.%player%} to now
-
     set join message to "&7[&a+&7] &f%player% joined the game!"
     wait 1 tick
 
