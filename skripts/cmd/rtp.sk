@@ -1,19 +1,22 @@
 command /rtp:
     trigger:
-        if {cooldown_rtp.%player%} is before now:
-            set {cooldown_rtp.%player%} to now + 8 seconds
-            if player's world is "world":
-                set {_loc} to generateTeleportLocation()
-                if {_loc} is set:
-                    teleport player to {_loc}
-                    send "&aYou have been randomly teleported!" to player
-                else:
-                    send "&cCould not find a safe teleport location, try again!" to player
-            else:
-                send "&cYou cannot teleport in this dimension." to player
-        else:
+        if {cooldown_rtp.%player%} is set:
+            now is before {cooldown_rtp.%player%}:
             set {_cooldown} to difference between {cooldown_rtp.%player%} and now
-            send "&cThis command is currently on cooldown for %{_cooldown}% &cseconds." to player
+            send "&cThis command is currently on cooldown for %{_cooldown}%." to player
+            stop
+    
+        set {cooldown_rtp.%player%} to now + 8 seconds
+    
+        if player's world is "world":
+            set {_loc} to generateTeleportLocation()
+            if {_loc} is set:
+                teleport player to {_loc}
+                send "&aYou have been randomly teleported!" to player
+            else:
+                send "&cCould not find a safe teleport location. Please try again." to player
+        else:
+            send "&cYou cannot teleport in this dimension." to player
 
 function generateTeleportLocation() :: location:
     loop 100 times:
