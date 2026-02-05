@@ -175,7 +175,7 @@ on PlayerFishEvent:
             stop
 
         if {_temperate::*} contains "%{_biome}%":
-            set {_loot} to random element out of raw cod, raw salmon
+            set {_loot} to random element out of raw cod, and raw salmon
         else if {_cold::*} contains "%{_biome}%":
             set {_loot} to raw cod
         else if {_warm::*} contains "%{_biome}%":
