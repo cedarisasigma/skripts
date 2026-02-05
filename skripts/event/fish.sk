@@ -1,13 +1,13 @@
 on fishing:
     if fishing state is "CAUGHT_FISH":
-
+        cancel event
         set {_player} to player
-        set {_biome} to biome at player's location
+        set {_biome} to biome at player
         set {_random} to a random number between 1 and 100
 
-        set {_general_biomes::*} to "ocean", "river", and "beach"
-        set {_cold_biomes::*} to "snowy_tundra", "snowy_mountains", and "ice_spikes"
-        set {_warm_biomes::*} to "desert", "savanna", and "badlands"
+        set {_general_biomes::*} to "ocean", "river", "beach"
+        set {_cold_biomes::*} to "snowy_tundra", "snowy_mountains", "ice_spikes"
+        set {_warm_biomes::*} to "desert", "savanna", "badlands"
 
         if {_general_biomes::*} contains {_biome}:
             if {_random} <= 92: # 92% chance of catching a fish
@@ -15,7 +15,7 @@ on fishing:
                 if {_loot} is leather boots:
                     set {_damage} to a random integer between 50 and 90
                     set damage of {_loot} to {_damage}
-                give 1 of {_loot} to {_player}
+                give 1 {_loot} to {_player}
                 send "&f&lCOMMON &r&e» &f1x %{_loot}%" to {_player}
             else:
                 # Handle the case where no fish is caught (optional)
