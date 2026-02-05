@@ -1,5 +1,5 @@
 command /reload:
     trigger:
-        execute console command "reload"
+        execute console command "minecraft:reload"
         wait 1 tick
         send "&aSuccessfully reloaded the server!" to player
