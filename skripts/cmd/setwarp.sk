@@ -2,12 +2,14 @@ command /setwarp <text>:
     trigger:
         if {warps::%arg-1%} is set:
             send "&aThere already is a warp by this name." to player
+            
             {warps::%arg-1%::owner} = player
             send "&aType &2/delwarp %arg-1% &ato delete this warp!" to player
         else:
             set {warps::%arg-1%} to player's location
+            set {warps::%arg-1%::owner} to player
+
             send "&aCreated a warp named %arg-1% at your position!" to player
             send "&aType &2/warp %arg-1% &ato use it!" to player
             
-            set {warps::%arg-1%::owner} to player
         
