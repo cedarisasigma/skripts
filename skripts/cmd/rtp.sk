@@ -2,7 +2,7 @@ command /rtp:
     trigger:
         if {cooldown_rtp.%player%} is set:
             now is less than {cooldown_rtp.%player%}
-            set {_cooldown} to TimeUtil.getSeconds(difference between {cooldown_rtp.%player%} and now)
+            set {_cooldown} to getSeconds(difference between {cooldown_rtp.%player%} and now)
             send "&cThis command is currently on cooldown for &4%{_cooldown}%." to player
             stop
     
