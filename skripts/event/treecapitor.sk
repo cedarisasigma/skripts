@@ -1,21 +1,33 @@
 on break of any log:
-	broadcast "true"
-	if type of player's tool is any axe:
-		broadcast "true"
-		if player is sneaking:
-			broadcast "true"
-			if {tree.capitating.%player%} is not set:
-				broadcast "true"
-				set {tree.capitating.%player%} to true
+    if player is holding any axe:
+        if player is sneaking:
+            if {tree.capitating.%player%} is not set:
+                set {tree.capitating.%player%} to true
+                
+                set {_log_type} to type of event-block
+                set {_current_pillar_block} to event-block
 
-				set {_block_to_check} to block above event-block
-
-				loop 64 times:
-					if {_block_to_check} is any log:
-						break {_block_to_check}
-						damage player's tool by 1
-						set {_block_to_check} to block above {_block_to_check}
-					else:
-						stop loop
-				
-				delete {tree.capitating.%player%}
+                loop 64 times:
+                    loop blocks in radius 1 around {_current_pillar_block}:
+                        if loop-block's y-coordinate is {_current_pillar_block}'s y-coordinate:
+                            if loop-block is not {_current_pillar_block}:
+                                if type of loop-block is {_log_type}:
+                                    set {_has_leaves} to false
+                                    loop blocks in radius 1 around loop-block:
+                                        if loop-block-2 is any leaves:
+                                            set {_has_leaves} to true
+                                            stop loop
+                                    
+                                    if {_has_leaves} is true:
+                                        break loop-block
+                                        damage player's tool by 1
+                    
+                    set {_block_above} to block above {_current_pillar_block}
+                    if type of {_block_above} is {_log_type}:
+                        break {_block_above}
+                        damage player's tool by 1
+                        set {_current_pillar_block} to {_block_above}
+                    else:
+                        stop loop
+                
+                delete {tree.capitating.%player%}
