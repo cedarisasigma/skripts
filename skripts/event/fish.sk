@@ -1,6 +1,9 @@
-on fishing:
-    if fishing state is "CAUGHT_FISH":
-        set {_biome} to biome at player
+on script load:
+    import "org.bukkit.event.player.PlayerFishEvent"
+
+on "org.bukkit.event.player.PlayerFishEvent" with priority 5:
+    if "%event.getState().name()%" is "CAUGHT_FISH":
+        set {_biome} to biome at event.getPlayer()
         set {_rand} to a random integer between 1 and 100
 
         set {_temperate::*} to "plains", "sunflower plains", "forest", "flower forest", "birch forest", "birch forest hills", "mutated birch forest", "mutated birch forest hills", "roofed forest", "mutated roofed forest", "swampland", "mutated swampland", "mushroom island", "mushroom island shore", "ocean", "deep ocean", "beach", "stone beach" and "river"
@@ -17,13 +20,9 @@ on fishing:
             if {_loot} is leather boots:
                 set damage of {_loot} to random integer between 50 and 90
 
-            give 1 of {_loot} to player
-            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
+            event.getCaught().setItemStack({_loot})
+            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
 
-        wait 1 tick
-        loop all entities in radius 30 of player:
-            loop-entity is a dropped item
-            kill loop-entity
 
         # else if {_cold_biomes::*} contains {_biome}:
         #     if {_random} <= 92:
