@@ -12,7 +12,7 @@ on fishing:
         set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna", "savanna plateau", "mutated savanna", "mutated savanna plateau", "mesa", "mesa plateau", "mesa plateau f", "mutated mesa", "mutated mesa plateau", "mutated mesa plateau f", "jungle", "jungle hills", "jungle edge", "mutated jungle" and "mutated jungle edge"
 
 
-        broadcast {_temperate::*} contains {_biome}
+        broadcast "%{_temperate::*} contains {_biome}%"
 
         if {_temperate::*} contains {_biome}:
             if {_rand} <= 92:
