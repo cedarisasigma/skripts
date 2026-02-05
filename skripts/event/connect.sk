@@ -6,6 +6,8 @@ on join:
 
     send "&cPlease enter your authentication key to continue:" to player
 
+    apply slowness of tier 255 to player for 1 year
+
 on leave:
     delete {auth.%player%}
 
