@@ -1,3 +1,5 @@
 command /reload:
     trigger:
-        execute console command "reload confirm"
+        execute console command "reload"
+        wait 1 tick
+        send "&aSuccessfully reloaded the server!" to player
