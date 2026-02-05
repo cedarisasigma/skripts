@@ -20,6 +20,7 @@ on fishing:
             give 1 of {_loot} to player
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
+        wait 3 ticks
         loop all entities in radius 30 of player:
             loop-entity is fishing hook
             loop all entities in radius 5 of loop-entity:
