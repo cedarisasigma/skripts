@@ -20,7 +20,7 @@ on fishing:
             give 1 of {_loot} to player
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
-        loop all dropped items in radius 3 of player:
+        loop all dropped items in radius 3 of player's target:
             kill loop-entity
 
         # else if {_cold_biomes::*} contains {_biome}:
