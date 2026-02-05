@@ -1,6 +1,6 @@
 on break of any log:
 	broadcast "true"
-	if player's tool is any axe:
+	if type of player's tool is any axe:
 		broadcast "true"
 		if player is sneaking:
 			broadcast "true"
