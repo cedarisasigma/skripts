@@ -22,7 +22,8 @@ on fishing:
             give 1 of {_loot} to player
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
-        delete items within caught entity
+        loop all dropped items in radius 3 of fishing hook:
+            kill loop-entity
 
         # else if {_cold_biomes::*} contains {_biome}:
         #     if {_random} <= 92:
