@@ -1,7 +1,11 @@
 on break of any log:
+	broadcast "true"
     if player is holding any axe:
+		broadcast "true"
         if player is sneaking:
+			broadcast "true"
             if {tree.capitating.%player%} is not set:
+				broadcast "true"
                 set {tree.capitating.%player%} to true
 
                 set {_block_to_check} to block above event-block
@@ -15,7 +19,3 @@ on break of any log:
                         stop loop
                 
                 delete {tree.capitating.%player%}
-
-every minute:
-	loop all players:
-		delete {tree.capitating.%loop-player%}
