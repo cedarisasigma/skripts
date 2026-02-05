@@ -23,6 +23,11 @@ on click:
     cancel event
     send "&cYou need to be authenticated to perform this action." to player 
 
+on player move:
+    {auth.%player%} = false
+    cancel event
+    send "&cYou need to be authenticated to perform this action." to player 
+
 on jump:
     {auth.%player%} = false
     cancel event
