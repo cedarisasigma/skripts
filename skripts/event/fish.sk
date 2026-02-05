@@ -68,7 +68,7 @@ on PlayerFishEvent:
             clear {_lloot::*}
             add diamond block, enchanted golden apple to {_lloot::*}
 
-            if {_biome} is swampland or mutated swampland:
+            if {_biome} is "swampland" or "mutated swampland":
                 add witch spawner, wither skeleton skull to {_lloot::*}
 
             if {_biome} contains "desert":
@@ -77,7 +77,7 @@ on PlayerFishEvent:
             if {_biome} contains "snow" or "ice":
                 add snowman spawner to {_lloot::*}
 
-            if {_biome} is roofed forest or mutated roofed forest:
+            if {_biome} is "roofed forest" or "mutated roofed forest":
                 add vindicator spawner to {_lloot::*}
 
             if {_biome} contains "ocean":
@@ -129,7 +129,7 @@ on PlayerFishEvent:
             if {_cold::*} contains "%{_biome}%":
                 add stray spawner to {_eloot::*}
 
-            if {_biome} is swampland or mutated swampland:
+            if {_biome} is "swampland" or "mutated swampland":
                 add slime spawner to {_eloot::*}
 
             if {_biome} contains "mushroom":
@@ -188,11 +188,11 @@ on PlayerFishEvent:
         else if {_warm::*} contains "%{_biome}%":
             set {_loot} to raw salmon
 
-        if {_biome} is swampland or mutated swampland:
+        if {_biome} is "swampland" or "mutated swampland":
             set {_loot} to random element out of slimeball, lily pad, vines, brown mushroom, red mushroom, blue orchid, mushroom stew
         else if {_biome} contains "mushroom":
             set {_loot} to random element out of red mushroom, brown mushroom, mushroom stew
-        else if {_biome} is flower forest:
+        else if {_biome} is "flower forest":
             set {_loot} to random element out of orange tulip, red tulip, pink tulip, white tulip, oxeye daisy
         else if {_biome} contains "desert":
             set {_loot} to random element out of sand, cactus
@@ -201,10 +201,10 @@ on PlayerFishEvent:
         else if {_biome} contains "mountain":
             set {_loot} to random element out of gravel, clay ball
         else if {_biome} contains "snow" or "ice":
-            set {_loot} to snow
+            set {_loot} to snowball
         else if {_biome} contains "jungle":
             set {_loot} to random element out of melon seeds, cocoa beans
-        else if {_biome} is river or frozen river:
+        else if {_biome} is "river" or "frozen river":
             set {_loot} to sugar cane
 
         event.getCaught().setItemStack({_loot})
