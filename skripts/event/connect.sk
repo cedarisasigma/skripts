@@ -1,4 +1,7 @@
 on join:
+    if {rank.%player%} is not set:
+        set {rank.%player%} to "member"
+
     set {auth.%player%} to false
     apply slowness of tier 255 without particles to player for 1 year
 
