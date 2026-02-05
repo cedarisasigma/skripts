@@ -3,25 +3,24 @@ on fishing:
         cancel event
 
         set {_biome} to biome at player
+        set {_rand} to a random integer between 1 and 100
         broadcast {_biome}
 
+        set {_temperate::*} to plains, sunflower plains, forest, flower forest, birch forest, birch forest hills, mutated birch forest, mutated birch forest hills, roofed forest, mutated roofed forest, swampland, mutated swampland, mushroom island, mushroom island shore, ocean, deep ocean, beach, stone beach, and river
+        set {_cold::*} to ice plains, ice mountains, ice plains spikes, cold beach, frozen ocean, frozen river, taiga, taiga hills, mutated taiga, cold taiga, cold taiga hills, mutated cold taiga, mega taiga, mega taiga hills, mutated redwood taiga, and mutated redwood taiga hills
+        set {_warm::*} to desert, desert hills, mutated desert, savanna, savanna plateau, mutated savanna, mutated savanna plateau, mesa, mesa plateau, mesa plateau f, mutated mesa, mutated mesa plateau, mutated mesa plateau f, jungle, jungle hills, jungle edge, mutated jungle, and mutated jungle edge
 
+        if {_temperate::*} contains {_biome}:
+            if {_rand} <= 92:
+                set {_loot} to random element out of raw cod, raw salmon
+            else:
+                set {_loot} to random element out of arrow, stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, oak boat
+            
+            if {_loot} is leather boots:
+                set damage of {_loot} to random integer between 50 and 90
 
-        # set {_random} to random integer between 1 and 100
-
-        # set {_general_biomes::*} to "OCEAN", "RIVER", and "BEACH"
-        # set {_cold_biomes::*} to "SNOWY_TUNDRA", "SNOWY_MOUNTAINS", and "ICE_SPIKES"
-        # set {_warm_biomes::*} to "DESERT", "SAVANNA", and "BADLANDS"
-
-        # if {_general_biomes::*} contains {_biome}:
-        #     if {_random} <= 92:
-        #         set {_loot} to random element out of raw cod, raw salmon, arrow, stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, oak boat
-        #         if {_loot} is leather boots:
-        #             set damage of {_loot} to random integer between 50 and 90
-        #         give 1 of {_loot} to {_player}
-        #         send "&f&lCOMMON &r&e» &f1x %{_loot}%" to {_player}
-        #     else:
-        #         send "&f&lNOTHING &r&e» &fYou didn't catch anything this time." to {_player}
+            give 1 of {_loot} to player
+            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
         # else if {_cold_biomes::*} contains {_biome}:
         #     if {_random} <= 92:
