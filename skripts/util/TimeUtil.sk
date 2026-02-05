@@ -1,4 +1,4 @@
-getSeconds(t: timespan) :: number:
+function getSeconds(t: timespan) :: number:
     set {_s} to "%{_t}%"
     
     replace all " second" with "s" in {_s}
