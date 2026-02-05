@@ -18,7 +18,7 @@ command /help [<number>]:
             else if {_page} > {_total_pages}:
                 set {_page} to {_total_pages}
 
-            set {_start_index} to ((_page - 1) * {_page_size}) + 1
+            set {_start_index} to (({_page} - 1) * {_page_size}) + 1
             set {_end_index} to min({_start_index} + {_page_size} - 1, size of {_help_messages::*})
 
             send "&8&m                                                                            " to player
