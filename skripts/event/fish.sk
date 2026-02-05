@@ -1,3 +1,34 @@
 on fishing:
-	if fishing state is "CAUGHT_FISH":
-		set items within caught entity to 1 raw cod
+    if fishing state is "CAUGHT_FISH":
+        cancel event
+        set {_player} to player
+        set {_biome} to biome at player's location
+        set {_random} to a random number between 1 and 100
+
+        set {_general_biomes::*} to "ocean", "river", and "beach"
+        set {_cold_biomes::*} to "snowy_tundra", "snowy_mountains", and "ice_spikes"
+        set {_warm_biomes::*} to "desert", "savanna", and "badlands"
+
+        if {_general_biomes::*} contains {_biome}:
+            if {_random} <= 92: # 92% chance of catching a fish
+                set {_loot} to a random element out of raw cod, raw salmon, arrow, stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, oak boat
+                if {_loot} is leather boots:
+                    set {_damage} to a random integer between 50 and 90
+                    set damage of {_loot} to {_damage}
+                give 1 {_loot} to {_player}
+                send "&f&lCOMMON &r&e» &f1x %{_loot}%" to {_player}
+            else:
+                # Handle the case where no fish is caught (optional)
+                send "&f&lNOTHING &r&e» &fYou didn't catch anything this time." to {_player}
+        else if {_cold_biomes::*} contains {_biome}:
+            if {_random} <= 92:
+                give 1 raw cod to {_player}
+                send "&f&lCOMMON &r&e» &f1x Raw Cod" to {_player}
+            else:
+                send "&f&lNOTHING &r&e» &fYou didn't catch anything this time." to {_player}
+        else if {_warm_biomes::*} contains {_biome}:
+            if {_random} <= 92:
+                give 1 raw salmon to {_player}
+                send "&f&lCOMMON &r&e» &f1x Raw Salmon" to {_player}
+            else:
+                send "&f&lNOTHING &r&e» &fYou didn't catch anything this time." to {_player}
