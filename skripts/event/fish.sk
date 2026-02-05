@@ -33,7 +33,7 @@ on PlayerFishEvent:
                     add prismarine shard named "&fFragment" to {_eloot::*}
                 set {_loot} to random element out of {_eloot::*}
                 event.getCaught().setItemStack({_loot})
-                send "&d&lEPIC &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+                send "&d&lEPIC &r&e» &f%amount of {_loot} parsed as itemtype%x %{_loot}%" to {_p}
                 stop
 
             if {_rand} >= 94:
@@ -43,7 +43,7 @@ on PlayerFishEvent:
                     add prismarine shard named "&fFragment" to {_rloot::*}
                 set {_loot} to random element out of {_rloot::*}
                 event.getCaught().setItemStack({_loot})
-                send "&6&lRARE &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+                send "&6&lRARE &r&e» &f%amount of {_loot} parsed as itemtype%x %{_loot}%" to {_p}
                 stop
 
             if {_rand} >= 89:
@@ -133,7 +133,7 @@ on PlayerFishEvent:
             add spawner named "&fMonster Spawner" with lore "&eSkeleton" to {_eloot::*}
             set {_loot} to random element out of {_eloot::*}
             event.getCaught().setItemStack({_loot})
-            send "&d&lEPIC &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+            send "&d&lEPIC &r&e» &f%amount of {_loot} parsed as itemtype%x %{_loot}%" to {_p}
             stop
 
         if {_rand} >= 94:
@@ -156,7 +156,7 @@ on PlayerFishEvent:
             add {_book} to {_rloot::*}
             set {_loot} to random element out of {_rloot::*}
             event.getCaught().setItemStack({_loot})
-            send "&6&lRARE &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+            send "&6&lRARE &r&e» &f%amount of {_loot} parsed as itemtype%x %{_loot}%" to {_p}
             stop
 
         if {_rand} >= 89:
