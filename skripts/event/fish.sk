@@ -175,11 +175,11 @@ on PlayerFishEvent:
             stop
 
         if {_temperate::*} contains "%{_biome}%":
-            set {_loot} to random element out of raw cod, and raw salmon
+            set {_loot} to random element out of 1 of raw cod, and 1 of raw salmon
         else if {_cold::*} contains "%{_biome}%":
-            set {_loot} to raw cod
+            set {_loot} to 1 of raw cod
         else if {_warm::*} contains "%{_biome}%":
-            set {_loot} to raw salmon
+            set {_loot} to 1 of raw salmon
 
         if {_biome} is "swampland" or "mutated swampland":
             set {_loot} to random element out of slimeball, lily pad, vines, brown mushroom, red mushroom, blue orchid, mushroom stew
