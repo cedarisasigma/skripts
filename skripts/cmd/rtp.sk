@@ -1,12 +1,12 @@
 command /rtp:
     trigger:
         if {cooldown_rtp.%player%} is set:
-            now is before {cooldown_rtp.%player%}:
+            now is greater than {cooldown_rtp.%player%}
             set {_cooldown} to difference between {cooldown_rtp.%player%} and now
             send "&cThis command is currently on cooldown for %{_cooldown}%." to player
             stop
     
-        set {cooldown_rtp.%player%} to now + 8 seconds
+        set {cooldown_rtp.%player%} to 8 seconds from now
     
         if player's world is "world":
             set {_loc} to generateTeleportLocation()
