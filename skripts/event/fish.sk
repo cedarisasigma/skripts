@@ -1,0 +1,3 @@
+on fish:
+	if fish event state = caught fish:
+		cancel event
