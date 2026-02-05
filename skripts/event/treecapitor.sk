@@ -1,5 +1,5 @@
 on break of any log:
-    player is holding any axe
+	player is holding any axe
 	player is sneaking
 	{tree.capitating.%player%} is not set
 
@@ -13,5 +13,5 @@ on break of any log:
 			set {_block_to_check} to block above {_block_to_check}
 		else:
 			stop loop
-	
+
 	delete {tree.capitating.%player%}
