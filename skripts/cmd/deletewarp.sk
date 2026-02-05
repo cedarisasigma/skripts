@@ -1,0 +1,13 @@
+command /delwarp <text>:
+    aliases: /deletewarp, /dwarp
+    trigger:
+        if {warps::%arg-1%} is set:
+            if {warps::%arg-1%::owner} is player:
+                delete {warps::%arg-1%}
+                delete {warps::%arg-1%::owner}
+                
+                send "&aDeleted warp %arg-1%!" to player
+            else:
+                send "&cYou are not the owner of this warp." to player
+        else:
+            send "&cThis warp does not exist." to player
