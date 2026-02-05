@@ -1,6 +1,3 @@
-import:
-    TimeUtil
-
 command /rtp:
     trigger:
         if {cooldown_rtp.%player%} is set:

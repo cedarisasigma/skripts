@@ -1,9 +1,7 @@
-public class TimeUtil:
+function TimeUtil.getSeconds(t: timespan) :: number:
+    set {_s} to "%{_t}%"
+    
+    replace all " second" with "s" in {_s}
+    replace all "s" with "" in {_s}
 
-    public static function getSeconds(t: timespan) :: number:
-        set {_s} to "%{_t}%"
-        
-        replace all " second" with "s" in {_s}
-        replace all "s" with "" in {_s}
-
-        return {_s} parsed as number
+    return {_s} parsed as number
