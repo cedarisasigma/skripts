@@ -1,5 +1,5 @@
 on join:
-    if location of player is not within 20 blocks of location(0.5, 64, 0.5, world "world"):
+    if distance between player and location(0.5, 64, 0.5, world "world") is greater than 20:
         set {savedpos.%player%} to location of player
     
     teleport player to location(0.5, 64, 0.5, world "world")
