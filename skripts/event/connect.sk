@@ -1,26 +1,23 @@
- 
-    
-
-
 on join:
+    set {auth.%player%} to false
+    apply slowness of tier 255 without particles to player for 1 year
+
     if distance between player and location(0.5, 64, 0.5, world "world") is greater than 20:
         set {savedpos.%player%} to location of player
     
     teleport player to location(0.5, 64, 0.5, world "world")
-
-    set {auth.%player%} to false
     
     set join message to "&7[&a+&7] &f%player% joined the game!"
-    wait 1 tick
 
+    wait 2 tick
     send "&cPlease enter your authentication key to continue:" to player
-
-    apply slowness of tier 255 without particles to player for 1 year
 
 on first join:
     set {cooldown_rtp.%player%} to now
-    set join message to "&7[&a+&7] &f%player% joined the game! &d##%size of all players%"
+
+    set join message to "&7[&a+&7] &f%player% joined the game! &d##%size of offline players%"
     
+    wait 1 tick
     send "&aWelcome to the TuffSMP!" to player
 
 on leave:
