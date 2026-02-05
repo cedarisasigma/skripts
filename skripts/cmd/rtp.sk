@@ -1,7 +1,7 @@
 command /rtp:
     trigger:
-        if time since {cooldown_rtp.%player%} is greater than 0 seconds:
-            set {cooldown_rtp.%player%} to unix timestamp of 8 seconds from now
+        if {cooldown_rtp.%player%} is before now:
+            set {cooldown_rtp.%player%} to now + 8 seconds
             if player's world is "world":
                 set {_loc} to generateTeleportLocation()
                 if {_loc} is set:
@@ -12,7 +12,7 @@ command /rtp:
             else:
                 send "&cYou cannot teleport in this dimension." to player
         else:
-            set {_cooldown} to difference between unix timestamp of {cooldown_rtp.%player%} and unix timestamp of now
+            set {_cooldown} to difference between {cooldown_rtp.%player%} and now
             send "&cThis command is currently on cooldown for %{_cooldown}% &cseconds." to player
 
 function generateTeleportLocation() :: location:
