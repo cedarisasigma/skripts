@@ -1,5 +1,22 @@
 command /help:
     trigger:
-        if {rank.%player%} is "member":
+        if {rank.%player%} = "member":
             send "&8&m                                " to player
             send "&a            &lHELP             " to player
+            send "  &e • &6/delwarp &e» &fDelete a warp" to player
+            send "  &e • &6/help &e» &fShows this help menu" to player
+            send "  &e • &6/home &e» &fTeleport to your home" to player
+            send "  &e • &6/msg &e» &fMessage another player" to player
+            send "  &e • &6/ranks &e» &fView server ranks" to player
+            send "  &e • &6/rtp &e» &fTeleport to a random location" to player
+            send "  &e • &6/seed &e» &fShow the world seed" to player
+            send "  &e • &6/sethome &e» &fSet your home to your current position" to player
+            send "  &e • &6/setwarp &e» &fSet a warp" to player
+            send "  &e • &6/shop &e» &fOpens the server shop" to player
+            send "  &e • &6/spawn &e» &fTeleports you to spawn" to player
+            send "  &e • &6/tpa &e» &fRequest to teleport to another player" to player
+            send "  &e • &6/tpaccept &e» &fAccept a teleport request" to player
+            send "  &e • &6/tpdeny &e» &fDeny a teleport request" to player
+            send "  &e • &6/trash &e» &fOpens a trash can" to player
+            send "  &e • &6/warp &e» &fTeleport to a warp" to player
+            send "&8&m                                " to player
