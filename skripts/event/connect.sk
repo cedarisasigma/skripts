@@ -16,7 +16,6 @@ on join:
     send "&cPlease enter your authentication key to continue:" to player
 
 on first join:
-    set {rank.%player%} to "member"
     set {cooldown_rtp.%player%} to now
 
     set join message to "&7[&a+&7] &f%player% joined the game! &d##%size of offline players%"
@@ -26,5 +25,8 @@ on first join:
 
 on leave:
     delete {auth.%player%}
+    
+    if {rank.%player%} = "member":
+        delete {rank.%player%}
 
     set leave message to "&7[&c-&7] &f%player% left the game."
