@@ -5,14 +5,14 @@ on load:
 
 on command:
     if {rank.%player%} = "member":
-        {usr_commands::*} does not contain command:
+        {usr_commands::*} does not contain command
 
         cancel event
         send "&cUnknown command /%command%. Type /help for help." to player
 
     else if {rank.%player%} = "admin":
-        {usr_commands::*} does not contain command:
-        {admin_commands::*} does not contain command:
+        {usr_commands::*} does not contain command
+        {admin_commands::*} does not contain command
         
         cancel event
         send "&cUnknown command /%command%. Type /help for help." to player
