@@ -20,12 +20,10 @@ on fishing:
             give 1 of {_loot} to player
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
-        wait 3 ticks
+        wait 1 tick
         loop all entities in radius 30 of player:
-            loop-entity is a bobber
-            loop all entities in radius 5 of loop-entity:
-                loop-entity-2 is a dropped item
-                kill loop-entity-2
+            loop-entity is a dropped item
+            kill loop-entity-2
 
         # else if {_cold_biomes::*} contains {_biome}:
         #     if {_random} <= 92:
