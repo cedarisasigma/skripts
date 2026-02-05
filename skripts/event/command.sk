@@ -1,6 +1,6 @@
 on load:
     set {usr_commands::*} to "help"
-    set {admin_commands::*} to "skr", "heal", and "feed"
+    set {admin_commands::*} to "skr", "heal", "pl", "plugins", and "feed"
     set {owner_commands::*} to "reload", "whitelist", "console", and "restart"
 
 on command:
