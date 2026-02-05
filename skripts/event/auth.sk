@@ -30,7 +30,6 @@ on inventory click:
     send "&cYou need to be authenticated to perform this action." to player 
 
 on inventory open:
-    broadcast "true"
     {auth.%player%} = false
-    cancel event
+    close player's inventory
     send "&cYou need to be authenticated to perform this action." to player 
