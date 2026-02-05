@@ -9,3 +9,4 @@ on mine:
         
         {_origin} = {_target}
         break block at {_tLoc} naturally
+        spawn xp orb at loop-block
