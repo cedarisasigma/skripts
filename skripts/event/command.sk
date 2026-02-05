@@ -1,7 +1,7 @@
 on load:
     set {usr_commands::*} to "help"
     set {admin_commands::*} to "skr", "heal", and "feed"
-    set {owner_commands::*} to "op", and "deop"
+    set {owner_commands::*} to "reload", "whitelist", "console", and "restart"
 
 on command:
     if {rank.%player%} = "member":

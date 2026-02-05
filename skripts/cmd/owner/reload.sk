@@ -1,0 +1,3 @@
+command /reload:
+    trigger:
+        execute console command "reload confirm"
