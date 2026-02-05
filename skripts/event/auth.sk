@@ -16,11 +16,11 @@ on click:
     send "&cYou need to be authenticated to perform this action." to player 
 
 on damage:
-    attacker or victim is player
-    if {auth.%attacker%} = true:
+    attacker or victim is a player
+    if {auth.%attacker%} = false:
         cancel event
         send "&cYou need to be authenticated to perform this action." to attacker
-    else if {auth.%victim%} = true:
+    else if {auth.%victim%} = false:
         cancel event
         send "&cYou need to be authenticated to perform this action." to attacker
 
