@@ -6,6 +6,7 @@ command /setwarp <text>:
             send "&aType &2/delwarp %arg-1% &ato delete this warp!" to player
         else:
             set {warps::%arg-1%} to player's location
-            send "&aCreated a warp at your position!" to player
+            send "&aCreated a warp named %arg-1% at your position!" to player
+            send "&aType &2/warp %arg-1% &ato use it!" to player
             {warps::%arg-1%::owner} = player
         
