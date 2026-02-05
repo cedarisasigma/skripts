@@ -1,0 +1,4 @@
+on explode:
+    if event-entity is a creeper:
+        clear drops
+        set block destruction damage to 0
