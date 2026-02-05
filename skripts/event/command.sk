@@ -1,8 +1,27 @@
 on load:
     set {usr_commands} to "help"
     set {admin_commands} to "skr"
+    set {owner_commands} to "op", "deop"
 
 on command:
-    if {usr_commands} contains command:
-        send "&cUnknown command /%command%. Type /help for help." to player
+    if {rank.%player%} = "member":
+        {usr_commands} does not contain command:
+
         cancel event
+        send "&cUnknown command /%command%. Type /help for help." to player
+
+    else if {rank.%player%} = "admin":
+        {usr_commands} does not contain command:
+        {admin_commands} does not contain command:
+        
+        cancel event
+        send "&cUnknown command /%command%. Type /help for help." to player
+
+    else if {rank.%player%} = "owner":
+        {usr_commands} does not contain command
+        {admin_commands} does not contain command
+        {owner_commands} does not contain command
+
+        cancel event
+        send "&cUnknown command /%command%. Type /help for help."
+    

@@ -1,0 +1,4 @@
+command /heal:
+    trigger:
+        heal player
+        send "&aYou have been healed!" to player

@@ -1,0 +1,4 @@
+command /feed:
+    trigger:
+        set hunger of player to 20
+        send "&aYou have been fed!" to player
