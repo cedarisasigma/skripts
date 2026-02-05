@@ -3,45 +3,232 @@ import:
 
 on PlayerFishEvent:
     if "%event.getState().name()%" is "CAUGHT_FISH":
-        set {_biome} to biome at event.getPlayer()
-        set {_rand} to a random integer between 1 and 100
+        set {_p} to event.getPlayer()
+        set {_world} to world of {_p}
+        set {_biome} to biome at {_p}
+        set {_rand} to random integer between 1 and 100
 
-        set {_temperate::*} to "plains", "sunflower plains", "forest", "flower forest", "birch forest", "birch forest hills", "mutated birch forest", "mutated birch forest hills", "roofed forest", "mutated roofed forest", "swampland", "mutated swampland", "mushroom island", "mushroom island shore", "ocean", "deep ocean", "beach", "stone beach" and "river"
-        set {_cold::*} to "ice plains", "ice mountains", "ice plains spikes", "cold beach", "frozen ocean", "frozen river", "taiga", "taiga hills", "mutated taiga", "cold taiga", "cold taiga hills", "mutated cold taiga", "mega taiga", "mega taiga hills", "mutated redwood taiga" and "mutated redwood taiga hills"
-        set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna", "savanna plateau", "mutated savanna", "mutated savanna plateau", "mesa", "mesa plateau", "mesa plateau f", "mutated mesa", "mutated mesa plateau", "mutated mesa plateau f", "jungle", "jungle hills", "jungle edge", "mutated jungle" and "mutated jungle edge"
+        set {_temperate::*} to "plains", "sunflower plains", "forest", "flower forest",
+        "birch forest", "birch forest hills", "mutated birch forest",
+        "mutated birch forest hills", "roofed forest", "mutated roofed forest",
+        "swampland", "mutated swampland", "mushroom island",
+        "mushroom island shore", "ocean", "deep ocean", "beach",
+        "stone beach", "river"
+
+        set {_cold::*} to "ice plains", "ice mountains", "ice plains spikes",
+        "cold beach", "frozen ocean", "frozen river", "taiga", "taiga hills",
+        "mutated taiga", "cold taiga", "cold taiga hills",
+        "mutated cold taiga", "mega taiga", "mega taiga hills",
+        "mutated redwood taiga", "mutated redwood taiga hills"
+
+        set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna",
+        "savanna plateau", "mutated savanna", "mutated savanna plateau",
+        "mesa", "mesa plateau", "mesa plateau f", "mutated mesa",
+        "mutated mesa plateau", "mutated mesa plateau f",
+        "jungle", "jungle hills", "jungle edge",
+        "mutated jungle", "mutated jungle edge"
+
+        if environment of {_world} is the end:
+            if {_rand} = 100:
+                set {_loot} to random element out of shulker spawner, nether star
+                event.getCaught().setItemStack({_loot})
+                send "&c&lLEGENDARY &r&e» &f1x %{_loot}%" to {_p}
+                stop
+
+            if {_rand} >= 97:
+                clear {_eloot::*}
+                add diamond block, emerald block, gold block to {_eloot::*}
+                add mellohi music disc, dragon head, enderman spawner to {_eloot::*}
+                set {_elytra} to elytra
+                set damage of {_elytra} to 400
+                add {_elytra} to {_eloot::*}
+                add 12 experience bottles, 18 experience bottles to {_eloot::*}
+                loop random integer between 6 and 9 times:
+                    add prismarine shard named "&fFragment" to {_eloot::*}
+                set {_loot} to random element out of {_eloot::*}
+                event.getCaught().setItemStack({_loot})
+                send "&d&lEPIC &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+                stop
+
+            if {_rand} >= 94:
+                clear {_rloot::*}
+                add diamond to {_rloot::*}
+                loop random integer between 3 and 4 times:
+                    add prismarine shard named "&fFragment" to {_rloot::*}
+                set {_loot} to random element out of {_rloot::*}
+                event.getCaught().setItemStack({_loot})
+                send "&6&lRARE &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+                stop
+
+            if {_rand} >= 89:
+                clear {_uloot::*}
+                add experience bottle, gold ingot, shulker shell, lapis lazuli to {_uloot::*}
+                add prismarine shard named "&fFragment", prismarine shard named "&fFragment" to {_uloot::*}
+                set {_loot} to random element out of {_uloot::*}
+                event.getCaught().setItemStack({_loot})
+                send "&a&lUNCOMMON &r&e» &f1x %{_loot}%" to {_p}
+                stop
+
+            clear {_cloot::*}
+            add cod, end rod, redstone dust, emerald, beetroot seeds, chorus fruit, ender pearl to {_cloot::*}
+            add 1 spectral arrow, 2 spectral arrows, 3 spectral arrows to {_cloot::*}
+            add prismarine shard named "&fFragment" to {_cloot::*}
+            set {_loot} to random element out of {_cloot::*}
+            event.getCaught().setItemStack({_loot})
+            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to {_p}
+            stop
+
+        if {_rand} = 100:
+            clear {_lloot::*}
+            add diamond block, enchanted golden apple to {_lloot::*}
+
+            if {_biome} is swampland or {_biome} is mutated swampland:
+                add witch spawner, wither skeleton skull to {_lloot::*}
+
+            if {_biome} contains "desert":
+                add end crystal to {_lloot::*}
+
+            if {_biome} contains "snow" or {_biome} contains "ice":
+                add snowman spawner to {_lloot::*}
+
+            if {_biome} is roofed forest or {_biome} is mutated roofed forest:
+                add vindicator spawner to {_lloot::*}
+
+            if {_biome} contains "ocean":
+                add guardian spawner to {_lloot::*}
+
+            if {_biome} contains "mountain":
+                add creeper spawner to {_lloot::*}
+
+            if {_biome} contains "plains":
+                add iron golem spawner to {_lloot::*}
+
+            set {_loot} to random element out of {_lloot::*}
+            event.getCaught().setItemStack({_loot})
+            send "&c&lLEGENDARY &r&e» &f1x %{_loot}%" to {_p}
+            stop
+
+        if {_rand} >= 97:
+            clear {_eloot::*}
+            add diamond, golden horse armor to {_eloot::*}
+            loop random integer between 2 and 5 times:
+                add prismarine shard named "&fFragment" to {_eloot::*}
+
+            if {_biome} contains "jungle":
+                add chirp music disc, ocelot spawner to {_eloot::*}
+
+            if {_biome} contains "desert":
+                add 1 eye of ender, 2 eyes of ender, 3 eyes of ender to {_eloot::*}
+                add 1 blaze rod, 2 blaze rods, 3 blaze rods to {_eloot::*}
+                set {_husk} to monster spawner
+                set lore of {_husk} to "&eHusk"
+                add {_husk} to {_eloot::*}
+
+            if {_warm::*} contains "%{_biome}%":
+                add cod spawner to {_eloot::*}
+
+            if {_cold::*} contains "%{_biome}%":
+                add salmon spawner to {_eloot::*}
+
+            if {_biome} contains "forest":
+                add 2 golden apples, 3 golden apples, 4 golden apples to {_eloot::*}
+                add rabbit spawner to {_eloot::*}
+
+            if {_biome} contains "ocean":
+                add wet sponge, squid spawner to {_eloot::*}
+
+            if {_biome} contains "mountain":
+                add emerald block, silverfish spawner to {_eloot::*}
+
+            if {_cold::*} contains "%{_biome}%":
+                add stray spawner to {_eloot::*}
+
+            if {_biome} is swampland or {_biome} is mutated swampland:
+                add slime spawner to {_eloot::*}
+
+            if {_biome} contains "mushroom":
+                add mooshroom spawner to {_eloot::*}
+
+            if {_biome} contains "plains":
+                add cow spawner to {_eloot::*}
+
+            add skeleton spawner to {_eloot::*}
+            set {_loot} to random element out of {_eloot::*}
+            event.getCaught().setItemStack({_loot})
+            send "&d&lEPIC &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+            stop
+
+        if {_rand} >= 94:
+            clear {_rloot::*}
+            add lead, iron horse armor, name tag, emerald, golden apple to {_rloot::*}
+            add prismarine shard named "&fFragment" to {_rloot::*}
+            add 1 redstone dust, 2 redstone dust, 3 redstone dust, 4 redstone dust,
+                5 redstone dust, 6 redstone dust, 7 redstone dust, 8 redstone dust,
+                9 redstone dust, 10 redstone dust, 11 redstone dust, 12 redstone dust
+                to {_rloot::*}
+
+            set {_book} to enchanted book
+            set {_bookRoll} to random integer between 1 and 100
+            if {_bookRoll} <= 5:
+                enchant {_book} with silk touch 1 or mending 1
+            else:
+                set {_enchCount} to random integer between 1 and 3
+                loop {_enchCount} times:
+                    set {_ench} to random element out of
+                        protection, fire protection, blast protection,
+                        projectile protection, respiration, aqua affinity,
+                        thorns, sharpness, smite, bane of arthropods,
+                        knockback, fire aspect, looting, efficiency,
+                        unbreaking, fortune, power, punch, flame,
+                        infinity, depth strider, frost walker, mending
+                    set {_lvl} to random integer between 1 and max level of {_ench}
+                    enchant {_book} with {_ench} {_lvl}
+
+            add {_book} to {_rloot::*}
+            set {_loot} to random element out of {_rloot::*}
+            event.getCaught().setItemStack({_loot})
+            send "&6&lRARE &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
+            stop
+
+        if {_rand} >= 89:
+            set {_uloot::*} to water bucket, saddle, compass, clock
+
+            if {_warm::*} contains "%{_biome}%":
+                add prismarine shard, prismarine crystals, gold ingot to {_uloot::*}
+
+            if {_cold::*} contains "%{_biome}%":
+                add gunpowder, rabbit foot, 4 ink sacs, 5 ink sacs, 6 ink sacs to {_uloot::*}
+
+            set {_loot} to random element out of {_uloot::*}
+            event.getCaught().setItemStack({_loot})
+            send "&a&lUNCOMMON &r&e» &f1x %{_loot}%" to {_p}
+            stop
 
         if {_temperate::*} contains "%{_biome}%":
-            if {_rand} <= 92:
-                set {_loot} to random element out of raw cod, and raw salmon
-            else:
-                set {_loot} to random element out of arrow, stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, and oak boat
-            
-            if {_loot} is leather boots:
-                set damage of {_loot} to random integer between 50 and 90
-
-            event.getCaught().setItemStack({_loot})
-            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
-
+            set {_loot} to random element out of raw cod, raw salmon
         else if {_cold::*} contains "%{_biome}%":
-            if {_rand} <= 92:
-                set {_loot} to raw cod
-            else:
-                set {_loot} to random element out of bottle, stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, and tripwire hook
-            
-            if {_loot} is leather boots:
-                set damage of {_loot} to random integer between 50 and 90
-
-            event.getCaught().setItemStack({_loot})
-            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
-
+            set {_loot} to raw cod
         else if {_warm::*} contains "%{_biome}%":
-            if {_rand} <= 92:
-                set {_loot} to raw salmon
-            else:
-                set {_loot} to random element out of stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, spider eye, bone meal, ink sac, and iron nugget
-            
-            if {_loot} is leather boots:
-                set damage of {_loot} to random integer between 50 and 90
+            set {_loot} to raw salmon
 
-            event.getCaught().setItemStack({_loot})
-            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
+        if {_biome} is swampland or {_biome} is mutated swampland:
+            set {_loot} to random element out of slimeball, lily pad, vines, brown mushroom, red mushroom, blue orchid, mushroom stew
+        else if {_biome} contains "mushroom":
+            set {_loot} to random element out of red mushroom, brown mushroom, mushroom stew
+        else if {_biome} is flower forest:
+            set {_loot} to random element out of orange tulip, red tulip, pink tulip, white tulip, oxeye daisy
+        else if {_biome} contains "desert":
+            set {_loot} to random element out of sand, cactus
+        else if {_biome} contains "mesa":
+            set {_loot} to random element out of red sand, gold nugget
+        else if {_biome} contains "mountain":
+            set {_loot} to random element out of gravel, clay ball
+        else if {_biome} contains "snow" or {_biome} contains "ice":
+            set {_loot} to snow
+        else if {_biome} contains "jungle":
+            set {_loot} to random element out of melon seeds, cocoa beans
+        else if {_biome} is river or {_biome} is frozen river:
+            set {_loot} to sugar cane
+
+        event.getCaught().setItemStack({_loot})
+        send "&f&lCOMMON &r&e» &f1x %{_loot}%" to {_p}
