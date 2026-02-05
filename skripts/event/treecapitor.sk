@@ -11,7 +11,7 @@ on break of any log:
                         stop loop
                     set {_current_block} to {_blocks_to_check::1}
                     remove 1 from {_blocks_to_check::*}
-                    if {_current_block} is not an element of {_blocks_checked::*}:
+                    if {_blocks_checked::*} does not contain {_current_block}:
                         add {_current_block} to {_blocks_checked::*}
                         if {_current_block} is not event-block:
                             break {_current_block}
@@ -19,7 +19,7 @@ on break of any log:
                         loop blocks in radius 1 around {_current_block}:
                             if loop-block is not {_current_block}:
                                 if type of loop-block is {_log_type}:
-                                    if loop-block is not an element of {_blocks_checked::*}:
+                                    if {_blocks_checked::*} does not contain {_current_block}:
                                         set {_has_leaves} to false
                                         loop blocks in radius 1 around loop-block:
                                             if loop-block-2 is any leaves:
