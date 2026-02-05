@@ -26,17 +26,17 @@ on load:
     # Admin Commands
     add "&e • &6/ban <player> &e» &fBan a player from the server" to {admin_help::*}
     add "&e • &6/broadcast <message> &e» &fBroadcast a message to the server" to {admin_help::*}
-    add "&e • &6/clear [<player>] &e» &fClear your or another player''s inventory" to {admin_help::*}
+    add "&e • &6/clear [<player>] &e» &fClear your or another player's inventory" to {admin_help::*}
     add "&e • &6/clearlag &e» &fCan help to free up lag" to {admin_help::*}
     add "&e • &6/effect <player> <effect> [<duration>] [<amplifier>] &e» &fGive a player a potion effect" to {admin_help::*}
     add "&e • &6/enchant <enchantment> [<level>] &e» &fEnchant the item you are holding" to {admin_help::*}
-    add "&e • &6/esee <player> &e» &fView a player''s ender chest" to {admin_help::*}
+    add "&e • &6/esee <player> &e» &fView a player's ender chest" to {admin_help::*}
     add "&e • &6/feed [<player>] &e» &fFeed yourself or a player" to {admin_help::*}
     add "&e • &6/freeze <player> &e» &fFreeze a player" to {admin_help::*}
-    add "&e • &6/gamemode <gamemode> [<player>] &e» &fSet your own or another player''s gamemode (gma, gmc, gmsp, gms)" to {admin_help::*}
+    add "&e • &6/gamemode <gamemode> [<player>] &e» &fSet your own or another player's gamemode (gma, gmc, gmsp, gms)" to {admin_help::*}
     add "&e • &6/give <item> [<amount>] [<player>] &e» &fGive a player an item" to {admin_help::*}
     add "&e • &6/heal [<player>] &e» &fHeal yourself or a player" to {admin_help::*}
-    add "&e • &6/invsee <player> &e» &fView a player''s inventory" to {admin_help::*}
+    add "&e • &6/invsee <player> &e» &fView a player's inventory" to {admin_help::*}
     add "&e • &6/kick <player> &e» &fKick a player from the server" to {admin_help::*}
     add "&e • &6/kill <player> &e» &fKill a player" to {admin_help::*}
     add "&e • &6/killall <entity> &e» &fKill all entities of a certain type" to {admin_help::*}
@@ -44,14 +44,14 @@ on load:
     add "&e • &6/mute <player> &e» &fMute a player" to {admin_help::*}
     add "&e • &6/performance &e» &fView server performance" to {admin_help::*}
     add "&e • &6/plugins &e» &fView a list of server plugins" to {admin_help::*}
-    add "&e • &6/setrank <player> <rank> &e» &fSet a player''s rank" to {admin_help::*}
+    add "&e • &6/setrank <player> <rank> &e» &fSet a player's rank" to {admin_help::*}
     add "&e • &6/skr &e» &fReloads all skripts" to {admin_help::*}
     add "&e • &6/spectate [<player>] &e» &fSpectate a player or stop spectating" to {admin_help::*}
     add "&e • &6/sudo <player> <message> &e» &fForce a player to run a command or send a message" to {admin_help::*}
     add "&e • &6/summon <entity> [<amount>] [<location>] &e» &fSummon an entity" to {admin_help::*}
     add "&e • &6/time <set|add> <value> &e» &fChange the world time" to {admin_help::*}
     add "&e • &6/tp <player> &e» &fTeleport to a player" to {admin_help::*}
-    add "&e • &6/tph <player> &e» &fTeleport to a player''s home" to {admin_help::*}
+    add "&e • &6/tph <player> &e» &fTeleport to a player's home" to {admin_help::*}
     add "&e • &6/unban <player> &e» &fUnban a player" to {admin_help::*}
     add "&e • &6/unfreeze <player> &e» &fUnfreeze a player" to {admin_help::*}
     add "&e • &6/unmute <player> &e» &fUnmute a player" to {admin_help::*}
