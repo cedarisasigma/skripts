@@ -1,7 +1,7 @@
 import:
     org.bukkit.event.player.PlayerFishEvent
 
-on "org.bukkit.event.player.PlayerFishEvent" with priority 2:
+on "org.bukkit.event.player.PlayerFishEvent" with priority 1:
     if "%event.getState().name()%" is "CAUGHT_FISH":
         set {_biome} to biome at event.getPlayer()
         set {_rand} to a random integer between 1 and 100
