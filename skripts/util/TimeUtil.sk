@@ -1,5 +1,5 @@
-custom class TimeUtil:
-    
+public class TimeUtil:
+
     public static function getSeconds(t: timespan) :: number:
         set {_s} to "%{_t}%"
         
