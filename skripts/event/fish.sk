@@ -20,7 +20,8 @@ on fishing:
             give 1 of {_loot} to player
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
-        loop all entities where [loop-entity is a fishing hook] in radius 30 of player:
+        loop all entities in radius 30 of player:
+            loop-entity is fishing hook
             loop all items in radius 5 of loop-entity:
                 kill loop-item
 
