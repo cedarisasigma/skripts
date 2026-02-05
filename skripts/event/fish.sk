@@ -143,7 +143,15 @@ on PlayerFishEvent:
             add 1 redstone dust, 2 redstone dust, 3 redstone dust, 4 redstone dust, 5 redstone dust, 6 redstone dust, 7 redstone dust, 8 redstone dust, 9 redstone dust, 10 redstone dust, 11 redstone dust, 12 redstone dust to {_rloot::*}
 
             set {_book} to enchanted book
-            randomly enchant {_book}
+            set {_bookRoll} to random integer between 1 and 100
+            if {_bookRoll} <= 5:
+                enchant {_book} with silk touch 1 or mending 1
+            else:
+                set {_enchCount} to random integer between 1 and 3
+                loop {_enchCount} times:
+                    set {_ench} to random element out of protection, fire protection, blast protection, projectile protection, respiration, aqua affinity, thorns, sharpness, smite, bane of arthropods, knockback, fire aspect, looting, efficiency, unbreaking, fortune, power, punch, flame, infinity, depth strider, frost walker, mending
+                    set {_lvl} to 1
+                    enchant {_book} with enchantment {_ench} with level {_lvl}
 
             add {_book} to {_rloot::*}
             set {_loot} to random element out of {_rloot::*}
