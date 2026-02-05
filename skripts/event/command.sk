@@ -4,6 +4,7 @@ on load:
     set {owner_commands::*} to "reload", "whitelist", "console", and "restart"
 
 on command:
+    sender is not op
     if {rank.%player%} = "member":
         {usr_commands::*} does not contain command
 
