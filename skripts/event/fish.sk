@@ -11,7 +11,6 @@ on PlayerFishEvent:
         set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna", "savanna plateau", "mutated savanna", "mutated savanna plateau", "mesa", "mesa plateau", "mesa plateau f", "mutated mesa", "mutated mesa plateau", "mutated mesa plateau f", "jungle", "jungle hills", "jungle edge", "mutated jungle" and "mutated jungle edge"
 
         if {_temperate::*} contains "%{_biome}%":
-            broadcast "true"
             if {_rand} <= 92:
                 set {_loot} to random element out of raw cod, and raw salmon
             else:
@@ -23,17 +22,26 @@ on PlayerFishEvent:
             event.getCaught().setItemStack({_loot})
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
 
+        else if {_cold::*} contains "%{_biome}%":
+            if {_rand} <= 92:
+                set {_loot} to raw cod
+            else:
+                set {_loot} to random element out of bottle, stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, and tripwire hook
+            
+            if {_loot} is leather boots:
+                set damage of {_loot} to random integer between 50 and 90
 
-        # else if {_cold_biomes::*} contains {_biome}:
-        #     if {_random} <= 92:
-        #         give 1 raw cod to {_player}
-        #         send "&f&lCOMMON &r&e» &f1x Raw Cod" to {_player}
-        #     else:
-        #         send "&f&lNOTHING &r&e» &fYou didn't catch anything this time." to {_player}
+            event.getCaught().setItemStack({_loot})
+            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
 
-        # else if {_warm_biomes::*} contains {_biome}:
-        #     if {_random} <= 92:
-        #         give 1 raw salmon to {_player}
-        #         send "&f&lCOMMON &r&e» &f1x Raw Salmon" to {_player}
-        #     else:
-        #         send "&f&lNOTHING &r&e» &fYou didn't catch anything this time." to {_player}
+        else if {_warm::*} contains "%{_biome}%":
+            if {_rand} <= 92:
+                set {_loot} to raw salmon
+            else:
+                set {_loot} to random element out of stick, leather, leather boots, bowl, string, rotten flesh, bone, book, paper, spider eye, bone meal, ink sac, and iron nugget
+            
+            if {_loot} is leather boots:
+                set damage of {_loot} to random integer between 50 and 90
+
+            event.getCaught().setItemStack({_loot})
+            send "&f&lCOMMON &r&e» &f1x %{_loot}%" to event.getPlayer()
