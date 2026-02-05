@@ -13,7 +13,7 @@ command /rtp:
                 send "&cYou cannot teleport in this dimension." to player
         else:
             set {_cooldown} to difference between {cooldown_rtp.%player%} and now
-            send "&cThis command is currently on cooldown for %abs({_cooldown})% &cseconds." to player
+            send "&cThis command is currently on cooldown for %{_cooldown}% &cseconds." to player
 
 function generateTeleportLocation() :: location:
     loop 100 times:
