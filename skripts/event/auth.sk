@@ -30,6 +30,6 @@ on inventory click:
     send "&cYou need to be authenticated to perform this action." to player 
 
 on inventory open:
-    {auth.%player%} = false
+    {auth.%event-player%} = false
     close player's inventory
-    send "&cYou need to be authenticated to perform this action." to player 
+    send "&cYou need to be authenticated to perform this action." to event-player
