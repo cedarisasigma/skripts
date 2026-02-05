@@ -24,7 +24,7 @@ on PlayerFishEvent:
             if {_rand} >= 97:
                 clear {_eloot::*}
                 add diamond block, emerald block, gold block to {_eloot::*}
-                add mellohi music disc, dragon head, and spawner named "&fMonster Spawner" with lore "&eEnderman" to {_eloot::*}
+                add music disc, dragon head, and spawner named "&fMonster Spawner" with lore "&eEnderman" to {_eloot::*}
                 set {_elytra} to elytra
                 set damage of {_elytra} to 400
                 add {_elytra} to {_eloot::*}
@@ -101,7 +101,7 @@ on PlayerFishEvent:
                 add prismarine shard named "&fFragment" to {_eloot::*}
 
             if {_biome} contains "jungle":
-                add chirp music disc, spawner named "&fMonster Spawner" with lore "&eOcelot" to {_eloot::*}
+                add music disc chirp, spawner named "&fMonster Spawner" with lore "&eOcelot" to {_eloot::*}
 
             if {_biome} contains "desert":
                 add 1 eye of ender, 2 eyes of ender, 3 eyes of ender to {_eloot::*}
