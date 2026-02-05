@@ -150,7 +150,7 @@ on PlayerFishEvent:
                 set {_enchCount} to random integer between 1 and 3
                 loop {_enchCount} times:
                     set {_ench} to random element out of protection, fire protection, blast protection, projectile protection, respiration, aqua affinity, thorns, sharpness, smite, bane of arthropods, knockback, fire aspect, looting, efficiency, unbreaking, fortune, power, punch, flame, infinity, depth strider, frost walker, mending
-                    set {_lvl} to random integer between 1 and max level of {_ench}
+                    set {_lvl} to 1
                     enchant {_book} with {_ench} {_lvl}
 
             add {_book} to {_rloot::*}
