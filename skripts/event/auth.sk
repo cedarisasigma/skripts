@@ -2,7 +2,9 @@ on chat:
     if message = "charlie kirkie":
         cancel event
         send "&aSuccessfully authenticated!" to player
+
         set {auth.%player%} to true
+        clear potion effects of player
 
         if {savedpos.%player%} is set:
             teleport player to {savedpos.%player%}
