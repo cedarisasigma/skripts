@@ -24,7 +24,7 @@ on PlayerFishEvent:
             if {_rand} >= 97:
                 clear {_eloot::*}
                 add diamond block, emerald block, gold block to {_eloot::*}
-                add music disc mellohi , dragon head, and spawner named "&fMonster Spawner" with lore "&eEnderman" to {_eloot::*}
+                add music disc mellohi, dragon head, and spawner named "&fMonster Spawner" with lore "&eEnderman" to {_eloot::*}
                 set {_elytra} to elytra
                 set damage of {_elytra} to 400
                 add {_elytra} to {_eloot::*}
