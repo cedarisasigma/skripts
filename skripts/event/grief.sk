@@ -1,4 +1,5 @@
 on explode:
     if event-entity is a creeper:
-        clear drops
-        set block destruction damage to 0
+        cancel event
+        create safe explosion of power 4 at event-location 
+      
