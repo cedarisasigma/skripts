@@ -1,0 +1,17 @@
+on break of any log:
+    player is holding any axe:
+	player is sneaking:
+	{tree.capitating.%player%} is not set
+
+	set {tree.capitating.%player%} to true
+	set {_block_to_check} to block above event-block
+
+	loop 64 times:
+		if {_block_to_check} is any log:
+			break {_block_to_check}
+			damage player's tool by 1
+			set {_block_to_check} to block above {_block_to_check}
+		else:
+			stop loop
+	
+	delete {tree.capitating.%player%}
