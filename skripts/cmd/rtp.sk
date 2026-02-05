@@ -34,4 +34,3 @@ function generateTeleportLocation() :: location:
                         if type of block 2 meters above {_block} is air:
                             return block 1 meter above {_loc}
 
-    return location(0, 0, 0)
