@@ -1,5 +1,5 @@
 on break of any log:
-    if player is holding any axe:
+    if type of player's tool is any axe:
         if player is sneaking:
             if {tree.capitating.%player%} is not set:
                 set {tree.capitating.%player%} to true
