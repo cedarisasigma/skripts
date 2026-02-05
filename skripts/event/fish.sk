@@ -15,7 +15,7 @@ on fishing:
                 if {_loot} is leather boots:
                     set {_damage} to a random integer between 50 and 90
                     set damage of {_loot} to {_damage}
-                give 1 {_loot} to {_player}
+                give 1 of {_loot} to {_player}
                 send "&f&lCOMMON &r&e» &f1x %{_loot}%" to {_player}
             else:
                 # Handle the case where no fish is caught (optional)
