@@ -1,0 +1,11 @@
+on mine:
+    set {_origin} to "%type of event-block%"
+    set {_oLoc} to location of event-block
+
+    {_origin} contains "ore"
+    loop all blocks in radius 3 around {_oLoc}:
+        set {_target} to "%type of loop-block%"
+        set {_tLoc} to location of loop-block
+        
+        {_origin} = {_target}
+        break block at {_tLoc} naturally
