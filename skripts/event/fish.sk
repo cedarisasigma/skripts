@@ -22,7 +22,7 @@ on fishing:
 
         wait 3 ticks
         loop all entities in radius 30 of player:
-            loop-entity is fishing hook
+            type of loop-entity is a fishing hook
             loop all entities in radius 5 of loop-entity:
                 loop-entity-2 is a dropped item
                 kill loop-entity-2
