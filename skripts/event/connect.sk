@@ -1,4 +1,9 @@
 on join:
+    if location of player is not within 20 blocks of location(0.5, 64, 0.5, world "world"):
+        set {savedpos.%player%} to location of player
+    
+    teleport player to location(0.5, 64, 0.5, world "world")
+
     set {auth.%player%} to false
 
     set join message to "&7[&a+&7] &f%player% joined the game!"
