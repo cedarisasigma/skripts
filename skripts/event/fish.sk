@@ -1,6 +1,6 @@
 on fishing:
     if fishing state is "CAUGHT_FISH":
-        cancel event
+
         set {_player} to player
         set {_biome} to biome at player's location
         set {_random} to a random number between 1 and 100
