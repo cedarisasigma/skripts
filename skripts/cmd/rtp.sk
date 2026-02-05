@@ -3,7 +3,7 @@ command /rtp:
         if {cooldown_rtp.%player%} is set:
             now is less than {cooldown_rtp.%player%}
             set {_cooldown} to difference between {cooldown_rtp.%player%} and now
-            send "&cThis command is currently on cooldown for &4%{_cooldown} formatted as 'ss'%." to player
+            send "&cThis command is currently on cooldown for &4%unix date of {_cooldown} formatted as 'ss'%." to player
             stop
     
         set {cooldown_rtp.%player%} to 8 seconds from now
