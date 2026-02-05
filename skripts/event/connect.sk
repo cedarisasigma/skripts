@@ -5,6 +5,8 @@ on join:
     teleport player to location(0.5, 64, 0.5, world "world")
 
     set {auth.%player%} to false
+    
+    set {cooldown_rtp.%player%} to now
 
     set join message to "&7[&a+&7] &f%player% joined the game!"
     wait 1 tick
