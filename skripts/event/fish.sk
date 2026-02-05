@@ -8,27 +8,13 @@ on PlayerFishEvent:
         set {_biome} to biome at {_p}
         set {_rand} to random integer between 1 and 100
 
-        set {_temperate::*} to "plains", "sunflower plains", "forest", "flower forest",
-        "birch forest", "birch forest hills", "mutated birch forest",
-        "mutated birch forest hills", "roofed forest", "mutated roofed forest",
-        "swampland", "mutated swampland", "mushroom island",
-        "mushroom island shore", "ocean", "deep ocean", "beach",
-        "stone beach", "river"
+        set {_temperate::*} to "plains", "sunflower plains", "forest", "flower forest", "birch forest", "birch forest hills", "mutated birch forest","mutated birch forest hills", "roofed forest", "mutated roofed forest","swampland", "mutated swampland", "mushroom island","mushroom island shore", "ocean", "deep ocean", "beach","stone beach", "river"
 
-        set {_cold::*} to "ice plains", "ice mountains", "ice plains spikes",
-        "cold beach", "frozen ocean", "frozen river", "taiga", "taiga hills",
-        "mutated taiga", "cold taiga", "cold taiga hills",
-        "mutated cold taiga", "mega taiga", "mega taiga hills",
-        "mutated redwood taiga", "mutated redwood taiga hills"
+        set {_cold::*} to "ice plains", "ice mountains", "ice plains spikes","cold beach", "frozen ocean", "frozen river", "taiga", "taiga hills","mutated taiga", "cold taiga", "cold taiga hills","mutated cold taiga", "mega taiga", "mega taiga hills","mutated redwood taiga", "mutated redwood taiga hills"
 
-        set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna",
-        "savanna plateau", "mutated savanna", "mutated savanna plateau",
-        "mesa", "mesa plateau", "mesa plateau f", "mutated mesa",
-        "mutated mesa plateau", "mutated mesa plateau f",
-        "jungle", "jungle hills", "jungle edge",
-        "mutated jungle", "mutated jungle edge"
+        set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna","savanna plateau", "mutated savanna", "mutated savanna plateau","mesa", "mesa plateau", "mesa plateau f", "mutated mesa","mutated mesa plateau", "mutated mesa plateau f","jungle", "jungle hills", "jungle edge","mutated jungle", "mutated jungle edge"
 
-        if environment of {_world} is the end:
+        if {_world} is "world_the_end":
             if {_rand} = 100:
                 set {_loot} to random element out of shulker spawner, nether star
                 event.getCaught().setItemStack({_loot})
@@ -82,16 +68,16 @@ on PlayerFishEvent:
             clear {_lloot::*}
             add diamond block, enchanted golden apple to {_lloot::*}
 
-            if {_biome} is swampland or {_biome} is mutated swampland:
+            if {_biome} is swampland or mutated swampland:
                 add witch spawner, wither skeleton skull to {_lloot::*}
 
             if {_biome} contains "desert":
                 add end crystal to {_lloot::*}
 
-            if {_biome} contains "snow" or {_biome} contains "ice":
+            if {_biome} contains "snow" or "ice":
                 add snowman spawner to {_lloot::*}
 
-            if {_biome} is roofed forest or {_biome} is mutated roofed forest:
+            if {_biome} is roofed forest or mutated roofed forest:
                 add vindicator spawner to {_lloot::*}
 
             if {_biome} contains "ocean":
@@ -143,7 +129,7 @@ on PlayerFishEvent:
             if {_cold::*} contains "%{_biome}%":
                 add stray spawner to {_eloot::*}
 
-            if {_biome} is swampland or {_biome} is mutated swampland:
+            if {_biome} is swampland or mutated swampland:
                 add slime spawner to {_eloot::*}
 
             if {_biome} contains "mushroom":
@@ -202,7 +188,7 @@ on PlayerFishEvent:
         else if {_warm::*} contains "%{_biome}%":
             set {_loot} to raw salmon
 
-        if {_biome} is swampland or {_biome} is mutated swampland:
+        if {_biome} is swampland or mutated swampland:
             set {_loot} to random element out of slimeball, lily pad, vines, brown mushroom, red mushroom, blue orchid, mushroom stew
         else if {_biome} contains "mushroom":
             set {_loot} to random element out of red mushroom, brown mushroom, mushroom stew
@@ -214,11 +200,11 @@ on PlayerFishEvent:
             set {_loot} to random element out of red sand, gold nugget
         else if {_biome} contains "mountain":
             set {_loot} to random element out of gravel, clay ball
-        else if {_biome} contains "snow" or {_biome} contains "ice":
+        else if {_biome} contains "snow" or "ice":
             set {_loot} to snow
         else if {_biome} contains "jungle":
             set {_loot} to random element out of melon seeds, cocoa beans
-        else if {_biome} is river or {_biome} is frozen river:
+        else if {_biome} is river or frozen river:
             set {_loot} to sugar cane
 
         event.getCaught().setItemStack({_loot})
