@@ -1,4 +1,5 @@
 on break of any log:
+	delete {tree.capitating.%player%}
 	player is holding any axe
 	player is sneaking
 	{tree.capitating.%player%} is not set
