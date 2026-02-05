@@ -1,9 +1,4 @@
-on first join:
-    set {cooldown_rtp.%player%} to now
-    set join message to "&7[&a+&7] &f%player% joined the game! &d##%all players%"
-    
-    wait 1 tick
-    send "&aWelcome to the TuffSMP!" to player 
+ 
     
 
 
@@ -21,6 +16,13 @@ on join:
     send "&cPlease enter your authentication key to continue:" to player
 
     apply slowness of tier 255 without particles to player for 1 year
+
+on first join:
+    set {cooldown_rtp.%player%} to now
+    set join message to "&7[&a+&7] &f%player% joined the game! &d##%all players%"
+    
+    wait 1 tick
+    send "&aWelcome to the TuffSMP!" to player
 
 on leave:
     delete {auth.%player%}
