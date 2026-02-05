@@ -23,7 +23,7 @@ on fishing:
         wait 1 tick
         loop all entities in radius 30 of player:
             loop-entity is a dropped item
-            kill loop-entity-2
+            kill loop-entity
 
         # else if {_cold_biomes::*} contains {_biome}:
         #     if {_random} <= 92:
