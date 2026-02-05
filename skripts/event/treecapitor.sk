@@ -1,6 +1,6 @@
 on break of any log:
-    player is holding any axe:
-	player is sneaking:
+    player is holding any axe
+	player is sneaking
 	{tree.capitating.%player%} is not set
 
 	set {tree.capitating.%player%} to true
