@@ -9,3 +9,11 @@ on mine:
         
         {_origin} = {_target}
         break block at {_tLoc} using player's tool
+
+        {_target} is not an iron ore
+        {_target} is not a gold ore
+        spawn xp orb at {_target}
+
+        {_target} is nether quartz ore
+        spawn xp orb at {_target}
+        spawn xp orb at {_target}
