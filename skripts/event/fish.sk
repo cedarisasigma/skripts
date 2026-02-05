@@ -162,10 +162,7 @@ on PlayerFishEvent:
             clear {_rloot::*}
             add lead, iron horse armor, name tag, emerald, golden apple to {_rloot::*}
             add prismarine shard named "&fFragment" to {_rloot::*}
-            add 1 redstone dust, 2 redstone dust, 3 redstone dust, 4 redstone dust,
-                5 redstone dust, 6 redstone dust, 7 redstone dust, 8 redstone dust,
-                9 redstone dust, 10 redstone dust, 11 redstone dust, 12 redstone dust
-                to {_rloot::*}
+            add 1 redstone dust, 2 redstone dust, 3 redstone dust, 4 redstone dust, 5 redstone dust, 6 redstone dust, 7 redstone dust, 8 redstone dust, 9 redstone dust, 10 redstone dust, 11 redstone dust, 12 redstone dust to {_rloot::*}
 
             set {_book} to enchanted book
             set {_bookRoll} to random integer between 1 and 100
@@ -174,13 +171,7 @@ on PlayerFishEvent:
             else:
                 set {_enchCount} to random integer between 1 and 3
                 loop {_enchCount} times:
-                    set {_ench} to random element out of
-                        protection, fire protection, blast protection,
-                        projectile protection, respiration, aqua affinity,
-                        thorns, sharpness, smite, bane of arthropods,
-                        knockback, fire aspect, looting, efficiency,
-                        unbreaking, fortune, power, punch, flame,
-                        infinity, depth strider, frost walker, mending
+                    set {_ench} to random element out of protection, fire protection, blast protection, projectile protection, respiration, aqua affinity, thorns, sharpness, smite, bane of arthropods, knockback, fire aspect, looting, efficiency, unbreaking, fortune, power, punch, flame, infinity, depth strider, frost walker, mending
                     set {_lvl} to random integer between 1 and max level of {_ench}
                     enchant {_book} with {_ench} {_lvl}
 
