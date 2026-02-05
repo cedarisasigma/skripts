@@ -1,7 +1,7 @@
 command /rtp:
     trigger:
         if time since {cooldown_rtp.%player%} is greater than 0 seconds:
-            set {cooldown_rtp.%player%} to unix timetamp of 8 seconds from now
+            set {cooldown_rtp.%player%} to unix timestamp of 8 seconds from now
             if player's world is "world":
                 set {_loc} to generateTeleportLocation()
                 if {_loc} is set:
