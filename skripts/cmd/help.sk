@@ -1,4 +1,4 @@
 command /help:
     trigger:
         if {rank.%player%} is "member":
-            send "&8&m                               " to player
+            send "&8&m                                " to player
