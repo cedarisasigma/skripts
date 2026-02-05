@@ -1,17 +1,18 @@
 command /rtp:
-    description: Teleports you to a random location
-    usage: /rtp
-    cooldown: 8 seconds
     trigger:
-        if player's world is "world":
-            set {_loc} to generateTeleportLocation()
-            if {_loc} is set:
-                teleport player to {_loc}
-                send "&aYou have been randomly teleported!" to player
+        if time until {cooldown_rtp.%player%} is less than 0 or is not set:
+            set {cooldown_rtp.%player%} to 8 seconds from now
+            if player's world is "world":
+                set {_loc} to generateTeleportLocation()
+                if {_loc} is set:
+                    teleport player to {_loc}
+                    send "&aYou have been randomly teleported!" to player
+                else:
+                    send "&cCould not find a safe teleport location, try again!" to player
             else:
-                send "&cCould not find a safe teleport location, try again!" to player
+                send "&cYou cannot teleport in this dimension" to player
         else:
-            send "&cYou cannot teleport in this dimension" to player
+            send "&cThis command is currently on cooldown for %time until {cooldown_rtp.%player%}% &cseconds." to player
 
 function generateTeleportLocation() :: location:
     loop 100 times:
