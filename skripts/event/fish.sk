@@ -1,5 +1,5 @@
-on script load:
-    import "org.bukkit.event.player.PlayerFishEvent"
+import:
+    org.bukkit.event.player.PlayerFishEvent
 
 on "org.bukkit.event.player.PlayerFishEvent" with priority 5:
     if "%event.getState().name()%" is "CAUGHT_FISH":
