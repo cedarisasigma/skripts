@@ -1,0 +1,4 @@
+command /sethome:
+    trigger:
+        set {home.%player%} to player's location
+        send "&aSet your home to %x-coord of player%, %y-coord of player%, %z-coord of player%!"
