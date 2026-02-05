@@ -16,7 +16,7 @@ on PlayerFishEvent:
 
         if {_world} is "world_the_end":
             if {_rand} = 100:
-                set {_loot} to random element out of shulker spawner, nether star
+                set {_loot} to random element out of spawner named "&fMonster Spawner" with lore "&eShulker", and nether star
                 event.getCaught().setItemStack({_loot})
                 send "&c&lLEGENDARY &r&e» &f1x %{_loot}%" to {_p}
                 stop
@@ -24,7 +24,7 @@ on PlayerFishEvent:
             if {_rand} >= 97:
                 clear {_eloot::*}
                 add diamond block, emerald block, gold block to {_eloot::*}
-                add mellohi music disc, dragon head, enderman spawner to {_eloot::*}
+                add mellohi music disc, dragon head, and spawner named "&fMonster Spawner" with lore "&eEnderman" to {_eloot::*}
                 set {_elytra} to elytra
                 set damage of {_elytra} to 400
                 add {_elytra} to {_eloot::*}
@@ -69,25 +69,25 @@ on PlayerFishEvent:
             add diamond block, enchanted golden apple to {_lloot::*}
 
             if {_biome} is "swampland" or "mutated swampland":
-                add witch spawner, wither skeleton skull to {_lloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eWitch", and wither skeleton skull to {_lloot::*}
 
             if {_biome} contains "desert":
                 add end crystal to {_lloot::*}
 
             if {_biome} contains "snow" or "ice":
-                add snowman spawner to {_lloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eSnowman" to {_lloot::*}
 
             if {_biome} is "roofed forest" or "mutated roofed forest":
-                add vindicator spawner to {_lloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eVindicator" to {_lloot::*}
 
             if {_biome} contains "ocean":
-                add guardian spawner to {_lloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eGuardian" to {_lloot::*}
 
             if {_biome} contains "mountain":
-                add creeper spawner to {_lloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eCreeper" to {_lloot::*}
 
             if {_biome} contains "plains":
-                add iron golem spawner to {_lloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eVillager Golem" to {_lloot::*}
 
             set {_loot} to random element out of {_lloot::*}
             event.getCaught().setItemStack({_loot})
@@ -101,44 +101,36 @@ on PlayerFishEvent:
                 add prismarine shard named "&fFragment" to {_eloot::*}
 
             if {_biome} contains "jungle":
-                add chirp music disc, ocelot spawner to {_eloot::*}
+                add chirp music disc, spawner named "&fMonster Spawner" with lore "&eOcelot" to {_eloot::*}
 
             if {_biome} contains "desert":
                 add 1 eye of ender, 2 eyes of ender, 3 eyes of ender to {_eloot::*}
                 add 1 blaze rod, 2 blaze rods, 3 blaze rods to {_eloot::*}
-                set {_husk} to monster spawner
-                set lore of {_husk} to "&eHusk"
-                add {_husk} to {_eloot::*}
-
-            if {_warm::*} contains "%{_biome}%":
-                add cod spawner to {_eloot::*}
-
-            if {_cold::*} contains "%{_biome}%":
-                add salmon spawner to {_eloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eHusk" to {_eloot::*}
 
             if {_biome} contains "forest":
                 add 2 golden apples, 3 golden apples, 4 golden apples to {_eloot::*}
-                add rabbit spawner to {_eloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eRabbit" to {_eloot::*}
 
             if {_biome} contains "ocean":
-                add wet sponge, squid spawner to {_eloot::*}
+                add wet sponge, spawner named "&fMonster Spawner" with lore "&eSquid" to {_eloot::*}
 
             if {_biome} contains "mountain":
-                add emerald block, silverfish spawner to {_eloot::*}
+                add emerald block, spawner named "&fMonster Spawner" with lore "&eSilverfish" to {_eloot::*}
 
             if {_cold::*} contains "%{_biome}%":
-                add stray spawner to {_eloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eStray" to {_eloot::*}
 
             if {_biome} is "swampland" or "mutated swampland":
-                add slime spawner to {_eloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eSlime" to {_eloot::*}
 
             if {_biome} contains "mushroom":
-                add mooshroom spawner to {_eloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eMooshroom" to {_eloot::*}
 
             if {_biome} contains "plains":
-                add cow spawner to {_eloot::*}
+                add spawner named "&fMonster Spawner" with lore "&eCow" to {_eloot::*}
 
-            add skeleton spawner to {_eloot::*}
+            add spawner named "&fMonster Spawner" with lore "&eSkeleton" to {_eloot::*}
             set {_loot} to random element out of {_eloot::*}
             event.getCaught().setItemStack({_loot})
             send "&d&lEPIC &r&e» &f%amount of {_loot}%x %{_loot}%" to {_p}
