@@ -1,0 +1,7 @@
+on load:
+    set {usr_commands} to "help"
+
+on command:
+    command is not in {usr_commands}:
+        send "&cUnknown command /%command%." to player
+        cancel event
