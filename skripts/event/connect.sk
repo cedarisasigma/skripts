@@ -1,6 +1,6 @@
 on first join:
     set {cooldown_rtp.%player%} to now
-    set join message to "&7[&a+&7] &f%player% joined the game! &d#%all players%"
+    set join message to "&7[&a+&7] &f%player% joined the game! &d##%all players%"
     
     wait 1 tick
     send "&aWelcome to the TuffSMP!" to player 
