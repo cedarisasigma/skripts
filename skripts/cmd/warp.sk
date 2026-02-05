@@ -1,0 +1,7 @@
+command /warp <text>:
+    trigger:
+        if {warps::%arg-1%} is set:
+            teleport player to {warps::%arg-1%}
+            send "&aTeleported to warp %{arg-1}%!" to player
+        else:
+            send "&cThis warp does not exist." to player

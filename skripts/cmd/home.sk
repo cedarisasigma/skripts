@@ -1,0 +1,3 @@
+command /home:
+    trigger:
+        teleport player to {home.%player%}
