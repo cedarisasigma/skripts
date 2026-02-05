@@ -1,7 +1,8 @@
 on load:
     set {usr_commands} to "help"
+    set {admin_commands} to "skr"
 
 on command:
     if {usr_commands} contains command:
-        send "&cUnknown command /%command%." to player
+        send "&cUnknown command /%command%. Type /help for help." to player
         cancel event

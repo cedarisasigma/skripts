@@ -1,0 +1,17 @@
+command /setadmin <player> <text>:
+    trigger:
+        if arg-2 = "player":
+            if {rank.%player%} = "admin" or "owner":
+                set {rank.%arg-1%} to "player"
+        else if arg-2 = "admin":
+            if {rank.%player%} = "owner":
+                set {rank.%arg-1%} to "admin"
+            else:
+                send "&cYou do not have permission to assign this rank." to player
+        else if arg-2 is "owner":
+            if {rank.%player%} = "owner":
+                set {rank.%arg-1%} to "owner"
+            else:
+                send "&cYou do not have permission to assign this rank." to player
+        else:
+            send "&cThe rank &4%arg-2% &cis not a valid choice. %nl%The available ranks are player, admin, and owner." to player
