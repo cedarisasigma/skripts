@@ -2,7 +2,7 @@ on fishing:
     if fishing state is "CAUGHT_FISH":
         set {_biome} to biome at player
         set {_rand} to a random integer between 1 and 100
-        
+
         set {_temperate::*} to "plains", "sunflower plains", "forest", "flower forest", "birch forest", "birch forest hills", "mutated birch forest", "mutated birch forest hills", "roofed forest", "mutated roofed forest", "swampland", "mutated swampland", "mushroom island", "mushroom island shore", "ocean", "deep ocean", "beach", "stone beach" and "river"
         set {_cold::*} to "ice plains", "ice mountains", "ice plains spikes", "cold beach", "frozen ocean", "frozen river", "taiga", "taiga hills", "mutated taiga", "cold taiga", "cold taiga hills", "mutated cold taiga", "mega taiga", "mega taiga hills", "mutated redwood taiga" and "mutated redwood taiga hills"
         set {_warm::*} to "desert", "desert hills", "mutated desert", "savanna", "savanna plateau", "mutated savanna", "mutated savanna plateau", "mesa", "mesa plateau", "mesa plateau f", "mutated mesa", "mutated mesa plateau", "mutated mesa plateau f", "jungle", "jungle hills", "jungle edge", "mutated jungle" and "mutated jungle edge"
@@ -20,7 +20,7 @@ on fishing:
             give 1 of {_loot} to player
             send "&f&lCOMMON &r&e» &f1x %{_loot}%" to player
 
-        loop all dropped items in radius 3 of fishing hook:
+        loop all dropped items in radius 3 of player:
             kill loop-entity
 
         # else if {_cold_biomes::*} contains {_biome}:
