@@ -8,6 +8,4 @@ on mine:
         set {_tLoc} to location of loop-block
         
         {_origin} = {_target}
-        break block at {_tLoc} naturally
-        {_target} is not iron ore or gold ore
-        spawn xp orb at loop-block
+        break block at {_tLoc} using player's tool
